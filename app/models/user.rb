@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 	has_many :experiences
 
 	before_save {self.email = email.downcase}
+	before_save {self.name = name.capitalize}
 	# Validacoes para classe User
 	# Campos name, username, email e passwd nao devem ser vazios
 	# Campos username, email devem ser unicos na base de dados
