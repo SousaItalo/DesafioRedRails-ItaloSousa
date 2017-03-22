@@ -1,4 +1,7 @@
 class PlacesController < ApplicationController
+	
+	before_action :require_user, except: [:index, :show]
+
 	def index
 		@places = Place.all
 	end
@@ -24,8 +27,11 @@ class PlacesController < ApplicationController
 		@place = Place.find(params[:id])
 	end
 
-	private
-	def place_params
-		params.require(:place).permit(:name, :description, :beds_qtd, :country, :city)
+	def destroy
 	end
+
+	private
+		def place_params
+			params.require(:place).permit(:name, :description, :beds_qtd, :country, :city)
+		end
 end

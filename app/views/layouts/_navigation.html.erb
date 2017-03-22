@@ -15,12 +15,22 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><%= link_to 'Lugares', places_path %></li>
-        <li><%= link_to 'Experiencias', '#'  %></li>
+        <li><%= link_to 'Experiencias', experiences_path  %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
-          <li><%= link_to 'Torne-se um anfitrião', '#' %></li>
-          <li><%= link_to 'Sair', logout_path, method: :delete %></li>
+          <li><%= link_to 'Torne-se um anfitrião', host_path %></li>
+          <li>
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><%= link_to 'Editar perfil', edit_user_path(current_user)%> </li>
+                <li><%= link_to 'Sair', logout_path, method: :delete %></li>
+              </ul>
+            </div>
+          </li>
         <% else %>
           <li><%= link_to 'Cadastre-se', signup_path %></li>
           <li><%= link_to 'Entrar', login_path %></li>

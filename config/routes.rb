@@ -4,12 +4,18 @@ Rails.application.routes.draw do
   #home page
   root 'pages#home'
 
+  #host page
+  get 'host', to: 'pages#host'
+
   #users routes
   get 'signup', to: 'users#new'
   resources :users, except: [:new]
 
   #places routes
   resources :places
+
+  #experiences routes
+  resources :experiences
 
   #sessions routes
   get 'login', to: 'sessions#new'

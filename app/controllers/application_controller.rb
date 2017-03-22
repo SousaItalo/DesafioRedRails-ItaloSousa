@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-
+  
   #torna os metodos current_user e logged_in disponiveis para views
   helper_method :current_user, :logged_in?
 
@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user
-  	if !logged_in
+  	if !logged_in?
   		flash[:danger] = "Voce deve estar logado no sistema para realizar esta ação"
   		redirect_to root_path
   	end
