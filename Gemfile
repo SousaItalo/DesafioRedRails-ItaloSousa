@@ -10,9 +10,6 @@ end
 gem 'rails', '~> 5.0.2'
 # Use bcrypt to set and authenticate password
 gem 'bcrypt', '~> 3.1.7'
-# Pagination gems
-gem 'will_paginate', '~> 3.1', '>= 3.1.5'
-gem 'bootstrap-will_paginate', '~> 0.0.11'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -23,10 +20,6 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# Images gems
-gem 'carrierwave', '~> 0.11.2'
-gem 'mini_magick', '~> 4.6', '>= 4.6.1'
-gem 'fog', '~> 1.40'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes

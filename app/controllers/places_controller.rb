@@ -1,10 +1,9 @@
 class PlacesController < ApplicationController
 	
-	before_action :require_user, except: [:index, :show, :edit]
-	before_action :set_place, only: [:edit, :update, :show, :destroy]
-	
+	before_action :require_user, except: [:index, :show]
+
 	def index
-		@places = Place.paginate(page: params[:page], per_page: 4).order('id DESC')
+		@places = Place.all
 	end
 
 	def new
@@ -18,7 +17,7 @@ class PlacesController < ApplicationController
 		
 		if @place.save
 			flash[:success] = "#{@place.name} cadastrado com sucesso:D"
-			redirect_to host_path
+			redirect_to root_path
 		else
 			render 'new'
 		end
@@ -28,31 +27,11 @@ class PlacesController < ApplicationController
 		@place = Place.find(params[:id])
 	end
 
-	def edit
-
-	end
-
-	def update
-		if @place.update(place_params)
-			flash[:success] = "Seus dados foram atualizados"
-			redirect_to  place_path(@place)
-		else
-			render 'edit'
-		end
-	end
-
 	def destroy
-		@place.destroy
-		flash[:notice] = "Oferta de lugar excluida! :("
-		redirect_to host_path
 	end
 
 	private
 		def place_params
 			params.require(:place).permit(:name, :description, :beds_qtd, :country, :city)
-		end
-
-		def set_place
-			@place = Place.find(params[:id])
 		end
 end
