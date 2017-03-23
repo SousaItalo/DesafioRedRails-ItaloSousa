@@ -1,11 +1,12 @@
 class PagesController < ApplicationController
 	def home
-		@places = Place.all.limit(4)
+		@places = Place.all.order('id desc').limit(4)
+		@experiences = Experience.all.order('id desc').limit(4)
 	end
 
 	def host
-		@places = Place.all
-		@experiences = Experience.all
+		@places = current_user.places
+		@experiences = current_user.experiences
 	end
 
 end

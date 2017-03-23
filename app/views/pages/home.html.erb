@@ -1,18 +1,17 @@
 <div class="row">
-	<h1>Lugares</h1>
+	<h1 align="center">Lugares</h1>
 </div>
 <div class="row">
 	<% @places.each do |place| %>
-		<div class="col-md-3"><%= place.name %></div>
+		<div class="col-md-3"><%= link_to place.name, place_path(place)%></div>
 	<% end %>
 </div>
 
 <div class="row">
-	<h1>Experiencias</h1>
+	<h1 align="center">Experiencias</h1>
 </div>
 <div class="row">
-	<div class="col-md-3">lugar1</div>
-	<div class="col-md-3">lugar2</div>
-	<div class="col-md-3">lugar3</div>
-	<div class="col-md-3">lugar4</div>
+	<% @experiences.each do |exp| %>
+		<div class="col-md-3"><%= link_to exp.name, experience_path(exp)%></div>
+	<% end %>
 </div>
