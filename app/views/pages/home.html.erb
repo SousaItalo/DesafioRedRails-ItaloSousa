@@ -3,7 +3,10 @@
 </div>
 <div class="row">
 	<% @places.each do |place| %>
-		<div class="col-md-3"><%= link_to place.name, place_path(place)%></div>
+		<div class="col-md-3">
+			<%= image_tag place.picture %>
+			<%= link_to place.name, place_path(place), align: "center"%>
+		</div>
 	<% end %>
 </div>
 
@@ -12,6 +15,9 @@
 </div>
 <div class="row">
 	<% @experiences.each do |exp| %>
-		<div class="col-md-3"><%= link_to exp.name, experience_path(exp)%></div>
+		<div class="col-md-3">
+			<%= image_tag exp.picture %>
+			<%= link_to exp.name, experience_path(exp)%>
+		</div>
 	<% end %>
 </div>

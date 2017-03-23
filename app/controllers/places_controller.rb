@@ -49,7 +49,7 @@ class PlacesController < ApplicationController
 
 	private
 		def place_params
-			params.require(:place).permit(:name, :description, :beds_qtd, :country, :city)
+			params.require(:place).permit(:name, :description, :beds_qtd, :country, :city, :picture, :price)
 		end
 
 		def set_place
