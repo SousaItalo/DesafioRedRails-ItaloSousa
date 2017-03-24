@@ -1,11 +1,11 @@
 <div class="row">
-	<h1 align="center">Lugares</h1>
+	<h1 align="center">Ultimas ofertas realizadas!</h1>
 </div>
 <div class="row">
 	<% @places.each do |place| %>
 		<div class="col-md-3">
 			<%= image_tag place.picture %>
-			<%= link_to place.name, place_path(place), align: "center"%>
+			<%= link_to place.name, place_path(place), class: "btn btn-default btn-sm"%>
 		</div>
 	<% end %>
 </div>

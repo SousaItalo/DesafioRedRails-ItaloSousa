@@ -20,7 +20,7 @@ class PlaceReservationsController < ApplicationController
 			redirect_to root_path
 			flash[:success] = "cadastrado com sucesso:D"
 		else
-			flash[:success] = "Tente novamente com uma data valida."
+			flash[:danger] = "Tente novamente com uma data valida."
 			redirect_to place_path(@reservation.place)
 		end
 	end
