@@ -14,7 +14,6 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><%= link_to 'Lugares', places_path %></li>
-        <li><%= link_to 'Experiencias', experiences_path  %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
@@ -27,6 +26,7 @@
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                 <li><%= link_to 'Editar perfil', edit_user_path(current_user)%> </li>
                 <li><%= link_to 'Minhas Reservas', place_reservations_path%> </li>
+                <li><%= link_to 'Minhas Ofertas', myoffers_path%> </li>
                 <li><%= link_to 'Sair', logout_path, method: :delete %></li>
               </ul>
             </div>

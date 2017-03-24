@@ -3,11 +3,14 @@ class User < ActiveRecord::Base
 	# Um usuário pode possuir mais de um local para alugar
 	has_many :places
 
-	has_many :place_reservations
-	
 	# Um usuário pode prover mais de uma experiencia 
 	has_many :experiences
 
+	#Um usuário pode possui varias reservas de lugar e experiencia
+	has_many :place_reservations
+	has_many :exp_reservations
+	
+	
 	before_save {self.email = email.downcase}
 	before_save {self.name = name.capitalize}
 	# Validacoes para classe User

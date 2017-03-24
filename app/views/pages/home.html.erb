@@ -9,15 +9,3 @@
 		</div>
 	<% end %>
 </div>
-
-<div class="row">
-	<h1 align="center">Experiencias</h1>
-</div>
-<div class="row">
-	<% @experiences.each do |exp| %>
-		<div class="col-md-3">
-			<%= image_tag exp.picture %>
-			<%= link_to exp.name, experience_path(exp)%>
-		</div>
-	<% end %>
-</div>

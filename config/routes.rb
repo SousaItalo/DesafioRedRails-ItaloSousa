@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   #host page
   get 'host', to: 'pages#host'
+  get 'myoffers', to: 'pages#myoffers'
 
   #users routes
   get 'signup', to: 'users#new'
@@ -13,9 +14,6 @@ Rails.application.routes.draw do
 
   #places routes
   resources :places
-
-  #experiences routes
-  resources :experiences
 
   #sessions routes
   get 'login', to: 'sessions#new'

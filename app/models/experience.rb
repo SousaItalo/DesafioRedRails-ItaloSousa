@@ -2,6 +2,8 @@ class Experience < ActiveRecord::Base
 	#Cada obj Experience deve estar associdado a um obj User
 	belongs_to :user
 
+	has_many :exp_reservations
+
 	mount_uploader :picture, ImageUploader
 
 	before_save {self.name = name.capitalize}

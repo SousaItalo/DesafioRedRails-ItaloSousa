@@ -18,9 +18,10 @@ class PlacesController < ApplicationController
 		
 		if @place.save
 			flash[:success] = "#{@place.name} cadastrado com sucesso:D"
-			redirect_to host_path
+			redirect_to place_path(@place)
 		else
-			render 'new'
+			flash[:danger] = "Campos Invalidos no forumulário abaixo"
+			redirect_to host_path
 		end
 	end
 
@@ -37,6 +38,7 @@ class PlacesController < ApplicationController
 			flash[:success] = "Seus dados foram atualizados"
 			redirect_to  place_path(@place)
 		else
+			flash[:danger] = "Campos Invalidos no forumulário abaixo"
 			render 'edit'
 		end
 	end

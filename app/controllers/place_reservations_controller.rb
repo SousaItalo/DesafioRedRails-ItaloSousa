@@ -3,7 +3,7 @@ class PlaceReservationsController < ApplicationController
 	before_action :set_place_reservation, only: [:destroy]
 
 	def index
-		@place_reservations = PlaceReservation.paginate(page: params[:page], per_page: 8)
+		@place_reservations = current_user.place_reservations.paginate(page: params[:page], per_page: 8)
 	end
 
 	def new
@@ -12,19 +12,22 @@ class PlaceReservationsController < ApplicationController
 	end
 
 	def create
+		
 		@reservation = PlaceReservation.new(place_reservation_params)
-		if @reservation.save
+		
+		if @reservation.data_entrada > Date.today && @reservation.data_entrada < @reservation.data_saida 
+			@reservation.save
 			redirect_to root_path
 			flash[:success] = "cadastrado com sucesso:D"
 		else
-		flash[:success] = @reservation.errors.full_messages
-		render 'new'
+			flash[:success] = "Tente novamente com uma data valida."
+			redirect_to place_path(@reservation.place)
 		end
 	end
 
 	def destroy
 		@place_reservation.destroy
-		render 'index'
+		redirect_to place_reservations_path
 	end
 
 	private
