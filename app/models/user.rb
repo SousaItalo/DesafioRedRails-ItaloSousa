@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
 	
 	# Um usuário pode possuir mais de um local para alugar
 	has_many :places
+
+	has_many :place_reservations
+	
 	# Um usuário pode prover mais de uma experiencia 
 	has_many :experiences
 

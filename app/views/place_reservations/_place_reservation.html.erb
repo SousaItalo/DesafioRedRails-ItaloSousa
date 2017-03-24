@@ -1,0 +1,20 @@
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<td>Nome</td>
+			<td>Data de Entrada</td>
+			<td>Data de Saida</td>
+			<td>Excluir</td>
+		</tr>
+	</thead>
+	<tbody>
+	<% obj.each do |o| %>
+		<tr>
+			<td><%=link_to o.place.name, place_path(o.place)%></td>
+			<td><%=o.data_entrada%></td>
+			<td><%=o.data_saida%></td>
+			<td><%= link_to 'Excluir', place_reservation_path(o), method: :delete, data: {confirm: "Voce tem certeza?"}, class: "btn btn-xs btn-danger"%></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

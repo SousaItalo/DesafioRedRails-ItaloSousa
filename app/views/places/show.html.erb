@@ -17,7 +17,7 @@
 				<%= "R$#{@place.price}/dia" %>
 			</div>
 			<div class="col-sm-4 col-sm-offset-4">
-				<%= link_to 'Reservar', '#', class: "btn btn-xs btn-default"%>
+				<%= link_to 'Reservar', new_place_reservation_path(@place), class: "btn btn-xs btn-default"%>
 			</div>
 		</div>
 	</div>

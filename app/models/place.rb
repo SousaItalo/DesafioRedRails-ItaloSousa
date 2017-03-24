@@ -1,7 +1,11 @@
 class Place < ActiveRecord::Base
+	
 	#Cada obj Place deve estar associdado a um obj User
 	belongs_to :user
 
+	has_many :place_reservations
+
+	#Uploader para receber imagens dos usuários
 	mount_uploader :picture, ImageUploader
 
 	before_save {self.name = name.capitalize}

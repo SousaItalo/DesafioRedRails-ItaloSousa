@@ -1,0 +1,26 @@
+<h1>teste</h1>
+<%= form_for(@place_reservation, :html => {class: "form-horizontal", role: "form"}) do |p| %>
+	<div class="form-group">
+		<div class="control-label col-sm-2">
+			<%= p.label :Entrada %>
+		</div>
+		<div class="col-sm-8">
+			<%= p.date_field :data_entrada, autofocus: true %>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="control-label col-sm-2">
+			<%= p.label :Saida %>
+		</div>
+		<div class="col-sm-8">
+			<%= p.date_field :data_saida, autofocus: true %>
+		</div>
+	</div>
+	<%= p.hidden_field :place_id, value: @place_reservation.place_id%>
+	<%= p.hidden_field :user_id, value: current_user.id%>
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<%= p.submit "Confirmar", class: 'btn btn-primary btn-large' %>
+		</div>
+	</div>
+<% end %>

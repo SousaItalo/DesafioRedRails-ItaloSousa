@@ -26,6 +26,7 @@
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                 <li><%= link_to 'Editar perfil', edit_user_path(current_user)%> </li>
+                <li><%= link_to 'Minhas Reservas', place_reservations_path%> </li>
                 <li><%= link_to 'Sair', logout_path, method: :delete %></li>
               </ul>
             </div>

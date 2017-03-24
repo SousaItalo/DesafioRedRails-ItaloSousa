@@ -1,16 +1,16 @@
 <% obj.each do |place| %>
-		<div class="row">
-			<div class="col-xs-8 col-xs-offset-2">
-				<div class="well well-lg">
-					<div class="place_name">
-						<%= link_to place.name, place_path(place)%>
-					</div>
-					<div class="place_body">
-						<%= truncate(place.description, length: 50)%>
-					</div>
-					<%= place.country%>
-					<%= place.city%>
-				</div>		
-			</div>
+	<div class="row">
+		<div class="col-xs-8 col-xs-offset-2">
+			<div class="well well-lg">
+				<div class="place_name">
+					<%= link_to place.name, place_path(place)%>
+				</div>
+				<div class="place_body">
+					<%= truncate(place.description, length: 50)%>
+				</div>
+				<%= place.country%>
+				<%= place.city%>
+			</div>		
 		</div>
-	<% end %>
+	</div>
+<% end %>

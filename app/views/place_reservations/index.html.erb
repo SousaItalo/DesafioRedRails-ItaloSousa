@@ -1,0 +1,12 @@
+<div align="center">
+	<%if !@place_reservations.nil? %>
+		<h3 align="center">Lugares</h3>
+		<%= will_paginate %>	
+		<%= render 'place_reservation', obj: @place_reservations %>
+	<% end %>
+</div> 
+	
+
+<div align="center">
+	
+</div>

@@ -46,7 +46,7 @@ class PlacesController < ApplicationController
 		flash[:notice] = "Oferta de lugar excluida! :("
 		redirect_to host_path
 	end
-
+	
 	private
 		def place_params
 			params.require(:place).permit(:name, :description, :beds_qtd, :country, :city, :picture, :price)
