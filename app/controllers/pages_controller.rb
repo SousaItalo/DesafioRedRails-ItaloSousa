@@ -1,7 +1,8 @@
 class PagesController < ApplicationController
 	def home
-		@places = Place.all.order('id desc').limit(4)
+		@places = Place.all.order('id desc').limit(8)
 	end
+	
 
 	def host
 		@place = Place.new

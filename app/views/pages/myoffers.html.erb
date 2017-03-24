@@ -1,6 +1,8 @@
-<div class="col-md-6">
+<div class="row">
+	<h3>Lugares ofertados:</h3>
 	<%= render 'places/place', obj: @places %>
 </div>
-<div class="col-md-6">
-	<%= render 'place_reservations/place_reservation', obj: @my_places_reserves %>
+<div class="row">
+	<h4>Reservas em lugares que você ofertou:</h4>
 </div>
+<%= render 'place_reservations/place_reservation', obj: @my_places_reserves %>

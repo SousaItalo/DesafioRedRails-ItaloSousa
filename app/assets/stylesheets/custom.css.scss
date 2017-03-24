@@ -1,9 +1,29 @@
+$navbar-default-bg: #FFFFFF;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#logo{
+	float: left;
+	font-size: 1.5em;
+	letter-spacing: -1px;
+}
 
 .custom-btn{
 	border: 0 none;
 	padding: 14px 12px;
+}
+
+.custom-row{
+	margin-top: 25px;
+}
+.content-row{
+	padding-right: 8px;
+	padding-left: 14px;
+}
+.home-btn{
+	margin-top: 5px;
+	float: right;
 }
 
 img{
@@ -11,6 +31,37 @@ img{
     width: 270px;
 }
 
+.price-text{
+	color: #808080
+}
 .custom-btn{
-	margin-topt: 5px;
+	margin-top: 5px;
+}
+
+footer {
+ 	bottom:0px;
+	margin-top: 45px;
+	padding-top: 5px;
+	border-top: 1px solid #eaeaea;
+	color: #777;
+  height: 60px;
+  width: 100%;
+
+}
+
+footer small{
+	float: left;
+}
+
+footer ul{
+	float: right;
+	list-style: none;
+}
+
+footer ul li{
+	float: left;
+	margin-left: 15px;
+}
+.show-place{
+	padding-right: -10px	
 }

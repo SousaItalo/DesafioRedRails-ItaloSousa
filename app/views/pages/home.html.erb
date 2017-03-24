@@ -3,9 +3,15 @@
 </div>
 <div class="row">
 	<% @places.each do |place| %>
-		<div class="col-md-3">
+		<div class="col-md-3 custom-row">
 			<%= image_tag place.picture %>
-			<%= link_to place.name, place_path(place), class: "btn btn-default btn-sm"%>
+			<div class="row content-row">
+				<%= truncate(place.name, length: 18) %>
+				<small class="price-text">
+					<%= "R$#{place.price}/dia"%>
+				</small>
+				<%= link_to 'Detalhes', place_path(place), class: "btn btn-default btn-sm home-btn"%>
+			</div>
 		</div>
 	<% end %>
 </div>
