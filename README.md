@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Projeto desafio para seleção de estágio na RedRocket
 
-Things you may want to cover:
+O projeto visa implementar um sistema semelhante ao Airbnb
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Dentre as funcionalidades implementas posso destacar: Inclusão, exclusão e edição de ofertas, criação e edição de cadastro de usuários, upload de imagens, validação de datas, validação de email por meio de expressão regular e entre outras. 
