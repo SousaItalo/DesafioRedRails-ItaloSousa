@@ -17,8 +17,10 @@
 				<%= "R$#{@place.price}/dia" %>
 			</div>
 			<div class="col-sm-4 col-sm-offset-1">
+				<% if logged_in? %>
 				<%if current_user.id != @place.user.id %>
 					<%= link_to 'Reservar', new_place_reservation_path(@place), class: "btn btn-default"%>
+				<% end %>
 				<% end %>
 			</div>
 		</div>
