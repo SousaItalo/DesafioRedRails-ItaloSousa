@@ -3,7 +3,8 @@ class PlaceReservationsController < ApplicationController
 	before_action :set_place_reservation, only: [:destroy]
 
 	def index
-		@place_reservations = current_user.place_reservations.paginate(page: params[:page], per_page: 8)
+		#@place_reservations = current_user.place_reservations.paginate(page: params[:page], per_page: 8)
+		@place_reservations = PlaceReservation.joins(:user, :place).where("cast(users.id as text) = cast(#{current_user.id} as text)")
 	end
 
 	def new
