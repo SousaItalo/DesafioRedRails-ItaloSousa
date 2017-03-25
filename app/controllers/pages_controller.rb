@@ -10,7 +10,7 @@ class PagesController < ApplicationController
 
 	def myoffers
 		@places = current_user.places
-		@my_places_reserves = PlaceReservation.joins(:user, :place).where("users.id == #{current_user.id}")
+		@my_places_reserves = PlaceReservation.joins(:user, :place).where("cast(users.id as text) == cast(#{current_user.id} as text)")
 
 	end
 end
