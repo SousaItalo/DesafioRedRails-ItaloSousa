@@ -9,6 +9,8 @@ end
 gem 'rails', '~> 5.0.2'
 # Use bcrypt to set and authenticate password
 gem 'bcrypt', '~> 3.1.7'
+# Seed dump gem
+gem 'seed_dump'
 # Pagination gems
 gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 gem 'bootstrap-will_paginate', '~> 0.0.11'
