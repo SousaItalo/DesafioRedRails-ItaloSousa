@@ -1,5 +1,7 @@
 # README
 
+**IMPORTANTE**: o comando bundle install deve ser executado com a flag --without production na seguinte forma => *bundle install --without production*
+
 Projeto desafio para seleção de estágio na RedRocket
 
 O projeto visa implementar um sistema semelhante ao Airbnb
